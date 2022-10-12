@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<footer class="Footer" th:fragment="footer">
+  <div class="wrap">
+    <div class="row Footer-main">
+      <div class="row-block"
+           th:replace="~{fragments/footer_left_side_info_block_fragment :: block}"></div>
+      <div class="row-block">
+        <ul class="menu menu_vt Footer-menu">
+
+          <li class="menu-item" th:class="${index}"><a class="menu-link" th:href="@{/}"
+                                                        href="/" th:text="#{topbar.main}">главная</a>
+
+          <li class="menu-item" th:class="${genres}"><a class="menu-link" th:href="@{/genres/index}"
+                                                        href="/genres/index.html"th:text="#{topbar.genres}">Жанры</a>
+
+          <li class="menu-item" th:class="${recent}"><a class="menu-link" th:href="@{/books/recent}"
+                                                         href="/books/recent.html" th:text="#{topbar.news}">Новинки</a>
+          </li>
+          <li class="menu-item" th:class="${popular}"><a class="menu-link" th:href="@{/books/popular}"
+                                                         href="/books/popular.html"th:text="#{topbar.popular}">Популярное</a>
+          </li>
+
+          <li class="menu-item" th:class="${authors}"><a class="menu-link" th:href="@{/books/author}"
+                                                         href="/books/author.html"th:text="#{topbar.authors}">Авторы</a>
+                  </li>
+        </ul>
+
+<!--        ВСТАВКА ПО дз-->
+
+        <p>
+          <span>Выбор языка</span>
+          <select id="locales">
+            <option value=" "></option>
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+          </select>
+        </p>
+
+<!--        КОНЕЦ ВСТАКИ ПО ДЗ-->
+      </div>
+      <div class="row-block">
+        <ul class="menu menu_vt Footer-menu">
+                 <li class="menu-item" th:class="${signin}"><a class="menu-link" th:href="@{/signin}"
+                                                         href="/signin.html" th:text="#{another.signin}">Войти</a>
+          </li>
+          <li class="menu-item" th:class="${documents}"><a class="menu-link" th:href="@{/documents/index}"
+                                                        href="/documents/index.html" th:text="#{another.documents}">Документы</a>
+          </li>
+
+
+          <li class="menu-item" th:class="${about}"><a class="menu-link" th:href="@{/about}"
+                                                        href="/about.html" th:text="#{another.about}">О компании </a></li>
+
+
+          <li class="menu-item" th:class="${faq}"><a class="menu-link" th:href="@{/faq}"
+                                                       href="/faq.html"th:text="#{another.faq">Помощь </a>
+          </li>
+             <li class="menu-item" th:class="${contacts}"><a class="menu-link" th:href="@{/contacts}"
+                                                     href="/contacts.html" th:text="#{another.contacts}">Контакты </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="Footer-copy">
+    <div class="wrap">© 2021 Bookshop Pty Ltd. ALL RIGHTS RESERVED
+    </div>
+  </div>
+</footer>
+</html>
